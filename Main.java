@@ -95,6 +95,7 @@ public class Main {
                     biblioteca.agregarLibro(libro2);
                     biblioteca.agregarLibro(libro3);
                     biblioteca.agregarLibro(libro4);
+                    biblioteca.agregarLibro(libro5);
                     System.out.println("¡Libros agregados exitosamente!");
                     break;
 
