@@ -25,7 +25,7 @@ public class Biblioteca {
     public String buscarLibroPorTitulo(String titulo) {
         for (Libro libro : libros) {
             if (libro.getTitulo().equalsIgnoreCase(titulo)) {
-                return libro.getInformacion(); // Regresa la información del libro
+                return libro.toString(); // Regresa la información del libro
             }
         }
         return "Libro no encontrado: " + titulo; // Si no encuentra el libro, regresa un mensaje de error

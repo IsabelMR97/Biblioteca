@@ -22,6 +22,18 @@ public class Libro {
         return titulo;
     }
 
+    public String getAutor() {
+        return autor;
+    }
+
+    public int getYearPublicacion() {
+        return yearPublicacion;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
     public boolean esAntiguo() {
         int yearActual = java.time.Year.now().getValue();
         return (yearActual - yearPublicacion) > 20;
