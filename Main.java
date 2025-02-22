@@ -83,7 +83,21 @@ public class Main {
                     System.out.println("¡Hasta luego!");
                     scanner.close();
                     return;
-                
+
+                case 0:
+                    // Prueba rapida de ingreso de libros
+                    Libro libro1 = new Libro("El principito", "Antoine de Saint-Exupery", 1943, "978-0156013925");
+                    Libro libro2 = new Libro("Harry Potter y la piedra filosofal", "J.K. Rowling", 1997, "978-8478884452");
+                    Libro libro3 = new Libro("Las aventuras de Sherlock Holmes", "Arthur Conan Doyle", 1892, "978-8497643658");
+                    Libro libro4 = new Libro("Alicia en el pais de las maravillas", "Lewis Carroll", 1865, "978-8494326738");
+                    Libro libro5 = new Libro("Malasangre", "Michelle Roche Rodrigez", 2021, "978-8433998903");
+                    biblioteca.agregarLibro(libro1);
+                    biblioteca.agregarLibro(libro2);
+                    biblioteca.agregarLibro(libro3);
+                    biblioteca.agregarLibro(libro4);
+                    System.out.println("¡Libros agregados exitosamente!");
+                    break;
+
                 default:
                     System.out.println("Opcion no válida. Intenta de nuevo.");
             }

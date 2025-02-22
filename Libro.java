@@ -15,7 +15,7 @@ public class Libro {
 
     // Métodos
     public String getInformacion() {
-        return "Título: " + titulo + "\nAutor: " + autor + "\nAño de Publicación: " + yearPublicacion + "\nISBN: " + isbn + "\n";
+        return "Titulo: " + titulo + "\nAutor: " + autor + "\nAño de Publicación: " + yearPublicacion + "\nISBN: " + isbn + "\n";
     }
 
     public String getTitulo() {
