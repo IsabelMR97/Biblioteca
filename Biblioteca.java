@@ -17,7 +17,7 @@ public class Biblioteca {
     public String getLibros() {
         StringBuilder sb = new StringBuilder();
         for (Libro libro : libros) {
-            sb.append(libro.getInformacion()).append("\n");
+            sb.append(libro.toString()).append("\n");
         }
         return sb.toString();
     }

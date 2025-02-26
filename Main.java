@@ -28,15 +28,23 @@ public class Main {
                     System.out.print("Ingresa el titulo del libro: ");
                     String titulo = scanner.nextLine();
                     System.out.print("Ingresa el autor del libro: ");
-                    String autor = scanner.nextLine();
+                    String nombre = scanner.nextLine();
+                    System.out.print("Ingresa el ID del autor: ");
+                    String id = scanner.nextLine();
+                    System.out.print("Ingresa el correo electronico del autor: ");
+                    String correoElectronico = scanner.nextLine();
                     System.out.print("Ingresa el año de publicación: ");
                     int yearPublicacion = scanner.nextInt();
                     scanner.nextLine();  // Limpiar el buffer
                     System.out.print("Ingresa el ISBN del libro: ");
                     String isbn = scanner.nextLine();
+                    System.out.print("Ingresa el estatus del libro (¿esta prestado? true/false): ");
+                    boolean prestamo = scanner.nextBoolean();
+                    scanner.nextLine();
                     
                     // Crear un nuevo libro y agregarlo a la biblioteca
-                    Libro nuevoLibro = new Libro(titulo, autor, yearPublicacion, isbn);
+                    Autor nuevoAutor = new Autor(nombre, id, correoElectronico);
+                    Libro nuevoLibro = new Libro(titulo, nuevoAutor, yearPublicacion, isbn, prestamo);
                     biblioteca.agregarLibro(nuevoLibro);
                     System.out.println("¡Libro agregado exitosamente!");
                     break;
@@ -77,7 +85,7 @@ public class Main {
                         System.out.println("No se encontro el libro con ese titulo.");
                     }
                     break;
-                
+
                 case 5:
                     // Salir del programa
                     System.out.println("¡Hasta luego!");
@@ -86,11 +94,18 @@ public class Main {
 
                 case 0:
                     // Prueba rapida de ingreso de libros
-                    Libro libro1 = new Libro("El principito", "Antoine de Saint-Exupery", 1943, "978-0156013925");
-                    Libro libro2 = new Libro("Harry Potter y la piedra filosofal", "J.K. Rowling", 1997, "978-8478884452");
-                    Libro libro3 = new Libro("Las aventuras de Sherlock Holmes", "Arthur Conan Doyle", 1892, "978-8497643658");
-                    Libro libro4 = new Libro("Alicia en el pais de las maravillas", "Lewis Carroll", 1865, "978-8494326738");
-                    Libro libro5 = new Libro("Malasangre", "Michelle Roche Rodrigez", 2021, "978-8433998903");
+                    Autor autor1 = new Autor("Antoine de Saint-Exupery", "A001", "antoine@example.com");
+                    Autor autor2 = new Autor("J.K. Rowling", "A002", "jkrowling@example.com");
+                    Autor autor3 = new Autor("Arthur Conan Doyle", "A003", "arthur@example.com");
+                    Autor autor4 = new Autor("Lewis Carroll", "A004", "lewis@example.com");
+                    Autor autor5 = new Autor("Michelle Roche Rodrigez", "A005", "michelle@example.com");
+                
+                    Libro libro1 = new Libro("El principito", autor1, 1943, "978-0156013925", true);
+                    Libro libro2 = new Libro("Harry Potter y la piedra filosofal", autor2, 1997, "978-8478884452", false);
+                    Libro libro3 = new Libro("Las aventuras de Sherlock Holmes", autor3, 1892, "978-8497643658", true);
+                    Libro libro4 = new Libro("Alicia en el pais de las maravillas", autor4, 1865, "978-8494326738", false);
+                    Libro libro5 = new Libro("Malasangre", autor5, 2021, "978-8433998903", false);
+                
                     biblioteca.agregarLibro(libro1);
                     biblioteca.agregarLibro(libro2);
                     biblioteca.agregarLibro(libro3);
